@@ -6,4 +6,4 @@ class Teacher(models.Model):
 
     studiesType = fields.Selection(string="levelType", selection=[("HIGHER LEVEL TRAINING CYCLES", "Higher level training cycles"), ("UNIVERSITY DEGREE", "University Degree"),
                                                                 ("MASTER", "Master"), ("DOCTORATE", "Doctorate"), ("OTHER", "Other")])
-    qualifications = fields.Char(string="Name", required=True)
+    qualifications = fields.Char(string="qualifications")
