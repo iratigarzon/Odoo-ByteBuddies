@@ -11,7 +11,7 @@ class Subject(models.Model):
     languageType = fields.Selection(string="languageType", selection=[("ENGLISH", "English"), ("SPANISH", "Spanish"),
                                                                 ("BASQUE", "Basque")])
 
-    dateInit = fields.date(string="dateInit")
-    dateEnd = fields.date(string="dateEnd")
+    dateInit = fields.Date(string="dateInit")
+    dateEnd = fields.Date(string="dateEnd")
 
 

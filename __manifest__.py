@@ -25,17 +25,7 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/content.xml',
-        'views/ContentViews.xml',
-        'views/membershipPlan.xml',
-        'views/client.xml',
-        'views/clientView.xml',
-        'views/album.xml',
-        'views/albumViews.xml',
-        'views/challenge.xml',
-        'views/challengeView.xml',
+
 
     ],
     # only loaded in demonstration mode
