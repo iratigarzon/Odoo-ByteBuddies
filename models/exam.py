@@ -1,6 +1,8 @@
 from odoo import fields
 
-class Exam:
+class Exam(models.Model):
+    _name = "bytebuddies.exam"
+
     id = fields.Integer()
     description = fields.Char()
     filePath = fields.Char()

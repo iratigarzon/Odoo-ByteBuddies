@@ -1,6 +1,9 @@
 from odoo import fields
 
-class Mark:
+
+class Mark(models.Model):
+    _name = "bytebuddies.mark"
+
     # Id
     value = fields.Float()
     type = fields.Selection(selection_add=[('FIRST', 'First'), ('SECOND', 'Second'),
