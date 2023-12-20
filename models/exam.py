@@ -1,4 +1,4 @@
-from odoo import fields
+from odoo import fields, models, api
 
 class Exam(models.Model):
     _name = "bytebuddies.exam"
