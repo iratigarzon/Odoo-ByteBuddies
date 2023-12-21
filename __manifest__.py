@@ -24,9 +24,9 @@
     'depends': ['base'],
 
     # always loaded
-    'data': [
-
-
+'data': [
+    'security/byteBuddies_security.xml',
+    'menu_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

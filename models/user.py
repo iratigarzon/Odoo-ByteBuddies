@@ -1,8 +1,12 @@
-from odoo import models, api, fields
+from odoo import models, fields
 
 class User(models.Model):
+    _inherit = 'res.users'
     _name = "bytebuddies.user"
-    #_inherit = 'res.users'
 
-    dateInit = fields.Date(string="dateInit")
-    userType = fields.Selection(string="userType", selection=[("TEACHER", "Teacher"), ("STUDENT", "Student")])
+    date_init = fields.Date(string="Date Init")
+    user_type = fields.Selection(
+        string="User Type",
+        selection=[("TEACHER", "Teacher"), ("STUDENT", "Student")]
+    )
+
