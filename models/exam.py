@@ -4,7 +4,6 @@ from odoo import fields, models, api
 class Exam(models.Model):
     _name = "bytebuddies.exam"
 
-    id = fields.Integer()
     description = fields.Char()
     dateInit = fields.Date(string="dateInit")
     duration = fields.Integer()

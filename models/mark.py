@@ -4,7 +4,6 @@ from odoo import fields, models, api
 class Mark(models.Model):
     _name = "bytebuddies.mark"
 
-    # Id
     exam_id = fields.Many2one('bytebuddies.exam', string="Exam")
     student_id = fields.Many2one('bytebuddies.student', string="Student")
     value = fields.Float(string="Value")
