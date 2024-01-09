@@ -25,11 +25,8 @@
 
     # always loaded
     'data': [
-
-
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/content.xml',
-    ],
+        'security/byteBuddies_security.xml',
+        'security/ir.model.access.csv',
+        'views/menu_view.xml'
+    ]
 }

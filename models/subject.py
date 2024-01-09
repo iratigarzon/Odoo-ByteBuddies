@@ -13,5 +13,8 @@ class Subject(models.Model):
 
     dateInit = fields.Date(string="dateInit")
     dateEnd = fields.Date(string="dateEnd")
+    teachers = fields.Many2many('bytebuddies.teacher', string='Teachers')
+    enrollments = fields.One2many('bytebuddies.enrolled','subject',string='Enrollments')
+    exams = fields.One2many('bytebuddies.exam', 'subject_id',  string='Exams')
 
 
