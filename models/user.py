@@ -2,7 +2,6 @@ from odoo import models, fields
 
 
 class User(models.Model):
-    _inherit = 'res.users'
     _name = "bytebuddies.user"
     
     email = fields.Char()

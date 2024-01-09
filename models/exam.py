@@ -9,5 +9,5 @@ class Exam(models.Model):
     duration = fields.Integer()
     filePath = fields.Char()
     subject_id = fields.Many2one('bytebuddies.subject', string="Subject")
-    mark = fields.One2many('bytebuddies.mark', 'exam_id', ondelete='cascade', string="Mark")
+    mark = fields.One2many(comodel_name='bytebuddies.mark', inverse_name='exam_id', ondelete='cascade', string="Mark")
 

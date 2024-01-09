@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="categoria_model_byteBuddies" model="ir.module.category">
+        <field name="name">Acceso a ByteBuddies</field>
+    </record>
+
+    <record id="group_teacher" model="res.groups">
+        <field name="name">Teacher</field>
+        <field name="category_id" ref="categoria_model_byteBuddies"/>
+    </record>
+
+    <record id="group_student" model="res.groups">
+        <field name="name">Student</field>
+        <field name="category_id" ref="categoria_model_byteBuddies"/>
+    </record>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Subjects -->
+
+
+    <menuitem id="byteBuddies_menu" name="ByteBuddies" />
+
+    <menuitem name="subjects" id="subjects_menu" parent="byteBuddies_menu" action="subject_action"/>
+
+    <menuitem name="exams" id="exams_menu" parent="byteBuddies_menu" action="exam_action"/>
+
+    <!-- Exam -->
+    <record id="exam_action" model="ir.actions.act_window">
+        <field name="name">Exam</field>
+        <field name="res_model">bytebuddies.exam</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record id="subject_action" model="ir.actions.act_window">
+        <field name="name">Subject</field>
+        <field name="res_model">bytebuddies.subject</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+</odoo>
