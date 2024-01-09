@@ -24,12 +24,9 @@
     'depends': ['base'],
 
     # always loaded
-'data': [
-    'security/byteBuddies_security.xml',
-    'menu_view.xml'
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/content.xml',
-    ],
+    'data': [
+        'security/byteBuddies_security.xml',
+        'security/ir.model.access.csv',
+        'views/menu_view.xml'
+    ]
 }
