@@ -1,8 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bytebuddies,access.bytebuddies,model_bytebuddies_exam,group_teacher,1,1,1,1
-access_bytebuddies,access.bytebuddies,model_bytebuddies_exam,group_student,1,1,,
-access_bytebuddies,access.bytebuddies,model_bytebuddies_subject,group_teacher,1,1,1,1
-access_bytebuddies,access.bytebuddies,model_bytebuddies_subject,group_student,1,,,,
+access_bytebuddies_te,access.bytebuddies.te,model_bytebuddies_exam,group_teacher,1,1,1,1
+access_bytebuddies_se,access.bytebuddies.se,model_bytebuddies_exam,group_student,1,1,0,0
+access_bytebuddies_ts,access.bytebuddies.ts,model_bytebuddies_subject,group_teacher,1,1,1,1
+access_bytebuddies_ss,access.bytebuddies.ss,model_bytebuddies_subject,group_student,1,0,0,0
 
 
 
