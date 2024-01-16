@@ -1,0 +1,81 @@
+<odoo>
+    <!-- Form view -->
+    <record id="subject_form_view" model="ir.ui.view">
+        <field name="name">Subject Form View</field>
+        <field name="model">bytebuddies.subject</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de asignatura">
+                <group colspan="4">
+                    <group colspan="2" col="2">
+                        <separator string="Datos de la asignatura" colspan="2"/>
+                        <field name="name"/>
+                        <field name="hours"/>
+                        <field name="levelType"/>
+                        <field name="languageType"/>
+                        <field name="dateInit"/>
+                        <field name="dateEnd"/>
+                        <field name="teachers"/>
+                        <field name="exams"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="subject_tree_view" model="ir.ui.view">
+        <field name="name">Subject Tree View</field>
+        <field name="model">bytebuddies.subject</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de asignaturas">
+                <field name="name"/>
+                <field name="hours"/>
+                <field name="levelType"/>
+                <field name="languageType"/>
+                <field name="dateInit"/>
+                <field name="dateEnd"/>
+                <field name="teachers"/>
+                <field name="exams"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="subject_kanban_view" model="ir.ui.view">
+        <field name="name">Subject Kanban View</field>
+        <field name="model">bytebuddies.subject</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('bytebuddies.subject', 'image', record.id.raw_value)" alt="imagen libro"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="subject_search_view" model="ir.ui.view">
+        <field name="name">Subject Search View</field>
+        <field name="model">bytebuddies.subject</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <search string="Busqueda de subjects">
+                <field name="name"/>
+                <field name="hours"/>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -19,14 +19,16 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
+    'icon': '/bytebuddies/static/description/icon.png',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['project'],
 
     # always loaded
     'data': [
         'security/byteBuddies_security.xml',
         'security/ir.model.access.csv',
-        'views/menu_view.xml'
+        'views/menu_view.xml',
+        'views/subject_view.xml'
     ]
 }
