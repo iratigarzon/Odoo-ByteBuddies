@@ -14,8 +14,9 @@
                         <field name="languageType"/>
                         <field name="dateInit"/>
                         <field name="dateEnd"/>
-                        <field name="teachers"/>
                         <field name="exams"/>
+                        <field name="teachers"/>
+                        <field name="students"/>
                     </group>
                 </group>
             </form>
@@ -35,6 +36,8 @@
                 <field name="dateInit"/>
                 <field name="dateEnd"/>
                 <field name="teachers"/>
+                <field name="students"/>
+                 <field name="teachers"/>
                 <field name="exams"/>
             </tree>
         </field>

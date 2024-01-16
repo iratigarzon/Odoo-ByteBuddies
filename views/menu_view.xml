@@ -12,11 +12,25 @@
         <field name="res_model">bytebuddies.exam</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
+    <record id="student_action" model="ir.actions.act_window">
+        <field name="name">Student </field>
+        <field name="res_model">bytebuddies.student</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record id="teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher </field>
+        <field name="res_model">bytebuddies.teacher</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
 
     <menuitem id="byteBuddies_menu" name="ByteBuddies"/>
 
     <menuitem name="Subjects" id="subjects_menu" action="subject_action" parent="byteBuddies_menu"/>
 
     <menuitem name="Exams" id="exams_menu" action="exam_action" parent="byteBuddies_menu"/>
+
+    <menuitem name="Students" id="students_menu" action="student_action" parent="byteBuddies_menu"/>
+
+    <menuitem name="Teachers" id="teachers_menu" action="teacher_action" parent="byteBuddies_menu"/>
 
 </odoo>

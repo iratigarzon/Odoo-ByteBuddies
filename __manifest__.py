@@ -29,6 +29,8 @@
         'security/byteBuddies_security.xml',
         'security/ir.model.access.csv',
         'views/menu_view.xml',
-        'views/subject_view.xml'
+        'views/subject_view.xml',
+        'views/student_view.xml',
+        'views/teacher_view.xml'
     ]
 }

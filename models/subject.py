@@ -12,7 +12,7 @@ class Subject(models.Model):
 
     dateInit = fields.Date(string="Date Init")
     dateEnd = fields.Date(string="Date End")
-    teachers = fields.Many2many('bytebuddies.teacher', string='Teachers')
+    teachers = fields.Many2many('bytebuddies.teacher', string='Teachers', )
     students = fields.Many2many('bytebuddies.student', string='Students')
     exams = fields.One2many('bytebuddies.exam', 'subject_id', string='Exams')
 
@@ -27,13 +27,19 @@ class Subject(models.Model):
     def _constrains_dateInit(self):
         for subject in self:
             if subject.dateInit and subject.dateEnd and subject.dateInit > subject.dateEnd:
-                raise exceptions.ValidationError("Date Init cannot be greater than Date End.")
+                raise exceptions.ValidationError("La fecha de inicio no puede ser posterior a la fecha de fin.")
+
+    @api.constrains('name')
+    def _check_valid_name(self):
+        for user in self:
+            if user.name and not user.name.isalpha():
+                raise exceptions.ValidationError("El nombre solo puede contener letras.")
 
     @api.constrains('dateEnd')
-    def _constrains_dateEnd(self):
+    def _check_null_dateInit(self):
         for subject in self:
-            if subject.dateInit and subject.dateEnd and subject.dateEnd < subject.dateInit:
-                raise exceptions.ValidationError("Date End cannot be smaller than Date Init.")
+            if not subject.dateInit:
+                raise exceptions.ValidationError("La fecha de inicio no puede estar vacía.")
 
     def copy(self, default=None):
         if default is None:
