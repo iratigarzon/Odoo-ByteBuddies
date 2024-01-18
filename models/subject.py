@@ -22,7 +22,7 @@ class Subject(models.Model):
             if subject.name:
                 existing_subjects = self.env['bytebuddies.subject'].search([('name', '=', subject.name)])
                 if len(existing_subjects) > 1 or (len(existing_subjects) == 1 and existing_subjects[0] != subject):
-                    raise exceptions.ValidationError("Subject with the same name already exists.")
+                    raise exceptions.ValidationError("Existe una asignatura con el mismo nombre")
     @api.constrains('dateInit')
     def _constrains_dateInit(self):
         for subject in self:
