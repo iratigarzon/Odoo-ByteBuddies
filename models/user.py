@@ -8,7 +8,7 @@ class User(models.Model):
     email = fields.Char()
     name = fields.Char()
     surname = fields.Char()
-    password = fields.Char(string="Password", groups="your_module.group_admin")
+    password = fields.Char(string="Password", groups="bytebuddies.group_admin")
 
     @api.constrains('name')
     def _check_valid_name(self):

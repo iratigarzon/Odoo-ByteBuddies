@@ -1,0 +1,76 @@
+<odoo>
+    <!-- Form view -->
+    <record id="exam_form_view" model="ir.ui.view">
+        <field name="name">Exam Form View</field>
+        <field name="model">bytebuddies.exam</field>
+        <field name="arch" type="xml">
+            <form string="Formulario del examen">
+                <group colspan="4">
+                    <group colspan="2" col="2">
+                        <separator string="Datos del examen" colspan="2"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="dateInit"/>
+                        <field name="duration"/>
+                        <field name="subject_id"/>
+                        <field name="mark"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="exam_tree_view" model="ir.ui.view">
+        <field name="name">Exam Tree View</field>
+        <field name="model">bytebuddies.exam</field>
+        <field name="arch" type="xml">
+            <tree string="Lista de examenes">
+                <field name="name"/>
+                        <field name="description"/>
+                        <field name="dateInit"/>
+                        <field name="duration"/>
+                        <field name="subject_id"/>
+                        <field name="mark"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Kanban view -->
+    <record id="exam_kanban_view" model="ir.ui.view">
+        <field name="name">Exam Kanban View</field>
+        <field name="model">bytebuddies.exam</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('bytebuddies.exam', 'image', record.id.raw_value)" alt="imagen libro"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="exam_search_view" model="ir.ui.view">
+        <field name="name">Exam Search View</field>
+        <field name="model">bytebuddies.exam</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <search string="Busqueda de examenes">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+</odoo>
