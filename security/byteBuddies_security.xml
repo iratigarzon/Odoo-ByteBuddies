@@ -13,4 +13,9 @@
         <field name="name">Student</field>
         <field name="category_id" ref="categoria_model_byteBuddies"/>
     </record>
+
+     <record id="group_admin" model="res.groups">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="categoria_model_byteBuddies"/>
+    </record>
 </odoo>

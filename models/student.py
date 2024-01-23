@@ -8,4 +8,5 @@ class Student(models.Model):
     levelType = fields.Selection(string="levelType", selection=[("BEGGINER", "Beginner"), ("MEDIUM", "Medium"),
                                                                 ("EXPERIENCED", "Experienced")])
     mark = fields.One2many('bytebuddies.mark', 'student_id', ondelete='cascade', string="mark")
-    enrollments = fields.One2many('bytebuddies.subject', 'teachers', ondelete='cascade', string="enrollments")
+    subjects = fields.Many2many('bytebuddies.subject', 'student_subject_rel', 'student_id', 'subject_id',
+                                string="Subjects", ondelete='cascade')
