@@ -1,0 +1,80 @@
+<odoo>
+        <record id="bytebuddies_subject_reports" model="ir.actions.report">
+            <field name="name">Informe de asignaturas</field>
+            <field name="model">bytebuddies.subject</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">bytebuddies.bytebuddies_subject_template</field>
+            <field name="report_file">bytebuddies.report_subject</field>
+            <field name="binding_model_id" ref="model_bytebuddies_subject"/>
+    </record>
+   <template id="bytebuddies_subject_template">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                     <div class="header">
+                            <h1>Informe de Asignaturas - ByteBuddies</h1>
+                        </div>
+                    <table style="width:100%; border-collapse: collapse;">
+                        <tr>
+                            <td colspan="3" style="text-align:center; background-color:#f2f2f2; padding:10px;">
+                                <b>Nombre de la asignatura: </b><span t-field="o.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Horas: </b><span t-field="o.hours"/>
+                            </td>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Tipo de Nivel: </b><span t-field="o.levelType"/>
+                            </td>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Tipo de Idioma: </b><span t-field="o.languageType"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Fecha de Inicio: </b><span t-field="o.dateInit"/>
+                            </td>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Fecha de Fin: </b><span t-field="o.dateEnd"/>
+                            </td>
+                            <td style="border: 1px solid black; padding:10px;">
+                                <b>Profesores: </b>
+                                <t t-foreach="o.teachers" t-as="teacher">
+                                    <span t-field="teacher.name"/>
+                                     <span t-field="teacher.surname"/>
+                                    <t t-if="not teacher == o.teachers[-1]"><br/></t>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border: 1px solid black; padding:10px;">
+                                <b>Estudiantes: </b>
+                                <t t-foreach="o.students" t-as="student">
+                                    <span t-field="student.name"/>
+                                    <span t-field="student.surname"/>
+                                    <t t-if="not student == o.students[-1]"><br/></t>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="border: 1px solid black; padding:10px;">
+                                <b>Examenes: </b>
+                                <t t-foreach="o.exams" t-as="exam">
+                                    <span t-field="exam.name"/>
+                                    <t t-if="not exam == o.exams[-1]"><br/></t>
+                                </t>
+                            </td>
+                        </tr>
+                    </table>
+                <div class="footer">
+                            <p>© 2024 ByteBuddies</p>
+                        </div>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+
+</odoo>

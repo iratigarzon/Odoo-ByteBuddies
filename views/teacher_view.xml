@@ -26,7 +26,6 @@
         <field name="model">bytebuddies.teacher</field>
         <field name="arch" type="xml">
             <tree string="Lista de alumnos">
-                <field name="name"/>
                         <field name="name"/>
                         <field name="surname"/>
                         <field name="email"/>
