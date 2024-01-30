@@ -11,7 +11,7 @@
                         <field name="name"/>
                         <field name="surname"/>
                         <field name="email"/>
-                        <field name="password"/>
+                        <field name="password" password="True"/>
                         <field name="levelType"/>
                     </group>
                 </group>
