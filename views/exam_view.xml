@@ -27,11 +27,11 @@
         <field name="arch" type="xml">
             <tree string="Lista de examenes">
                 <field name="name"/>
-                        <field name="description"/>
-                        <field name="dateInit"/>
-                        <field name="duration"/>
-                        <field name="subject_id"/>
-                        <field name="mark"/>
+                <field name="description"/>
+                <field name="dateInit"/>
+                <field name="duration"/>
+                <field name="subject_id"/>
+                <field name="mark"/>
             </tree>
         </field>
     </record>

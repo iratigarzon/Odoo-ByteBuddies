@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import fields, models, api, exceptions
 
 
 class Mark(models.Model):
@@ -12,3 +12,5 @@ class Mark(models.Model):
                                            ('FOURTH', 'Fourth'), ('FIFTH', 'Fifth')])
     solutionFilePath = fields.Char(string="Solution file path")
     comment = fields.Char(string="Comment")
+
+

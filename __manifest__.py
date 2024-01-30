@@ -32,6 +32,7 @@
         'views/subject_view.xml',
         'views/student_view.xml',
         'views/teacher_view.xml',
-        'views/exam_view.xml'
+        'views/exam_view.xml',
+        'views/mark_view.xml'
     ]
 }
