@@ -12,6 +12,9 @@ access_bytebuddies_adme,access.bytebuddies.adme,model_bytebuddies_exam,group_adm
 access_bytebuddies_admt,access.bytebuddies.admt,model_bytebuddies_teacher,group_admin,1,1,1,1
 access_bytebuddies_teat,access.bytebuddies.teat,model_bytebuddies_teacher,group_teacher,1,0,0,
 access_bytebuddies_stut,access.bytebuddies.stut,model_bytebuddies_teacher,group_student,1,0,0,
+access_bytebuddies_admm,access.bytebuddies.admm,model_bytebuddies_mark,group_admin,1,1,1,1
+access_bytebuddies_team,access.bytebuddies.team,model_bytebuddies_mark,group_teacher,1,1,1,1
+access_bytebuddies_stum,access.bytebuddies.stum,model_bytebuddies_mark,group_student,1,0,0,
 
 
 
