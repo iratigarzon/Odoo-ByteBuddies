@@ -15,6 +15,7 @@ class Subject(models.Model):
     teachers = fields.Many2many('bytebuddies.teacher', string='Teachers', )
     students = fields.Many2many('bytebuddies.student', string='Students')
     exams = fields.One2many('bytebuddies.exam', 'subject_id', string='Exams')
+   
 
     @api.constrains('name')
     def _check_unique_subject_name(self):
