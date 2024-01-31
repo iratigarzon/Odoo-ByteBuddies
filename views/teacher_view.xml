@@ -11,7 +11,7 @@
                         <field name="name"/>
                         <field name="surname"/>
                         <field name="email"/>
-                         <field name="password" password="True">
+                         <field name="password" password="True"/>
                         <field name="studiesType"/>
                         <field name="qualifications"/>
                     </group>
