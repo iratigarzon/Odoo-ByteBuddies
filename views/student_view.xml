@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <form string="Formulario de asignatura">
                 <group colspan="4">
+                      <field name="image" widget="image" class="oe_avatar" nolabel="1"></field>
                     <group colspan="2" col="2">
                         <separator string="Datos del alumno " colspan="2"/>
                         <field name="name"/>

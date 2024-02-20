@@ -12,3 +12,4 @@ class Teacher(models.Model):
     qualifications = fields.Char(string="Qualifications")
     subjects = fields.Many2many('bytebuddies.subject', 'teacher_subject_rel', 'teacher_id', 'subject_id',
                                 string="Subjects", ondelete='cascade')
+    image = fields.Binary(string='Image')

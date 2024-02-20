@@ -1,4 +1,5 @@
 from odoo import models, fields, api, exceptions
+from datetime import datetime
 
 class Subject(models.Model):
     _name = "bytebuddies.subject"
@@ -12,11 +13,22 @@ class Subject(models.Model):
 
     dateInit = fields.Date(string="Date Init")
     dateEnd = fields.Date(string="Date End")
-    teachers = fields.Many2many('bytebuddies.teacher', string='Teachers', )
+    teachers = fields.Many2many('bytebuddies.teacher', string='Teachers')
     students = fields.Many2many('bytebuddies.student', string='Students')
     exams = fields.One2many('bytebuddies.exam', 'subject_id', string='Exams')
-   
+    image = fields.Binary(string='Image')
+    state_subject = fields.Selection(string="Subject state",  selection=[("ACTIVE", "Active"), ("INACTIVE", "Inactive")])
+    date_inactive = fields.Datetime(
+        string="Date Inactive",
+        readonly=True
+    )
 
+    @api.onchange('state_subject')
+    def _onchange_state_subject(self):
+        if self.state_subject == 'INACTIVE':
+            self.update({'date_inactive': fields.Datetime.now()})
+        else:
+            self.update({'date_inactive': False})
     @api.constrains('name')
     def _check_unique_subject_name(self):
         for subject in self:
@@ -32,9 +44,9 @@ class Subject(models.Model):
 
     @api.constrains('name')
     def _check_valid_name(self):
-        for user in self:
-            if user.name and not user.name.isalpha():
-                raise exceptions.ValidationError("El nombre solo puede contener letras.")
+        for record in self:
+            if record.name and not all(char.isalpha() or char.isspace() for char in record.name):
+                raise exceptions.ValidationError("El nombre solo puede contener letras y espacios.")
 
     @api.constrains('dateEnd')
     def _check_null_dateInit(self):
@@ -42,13 +54,19 @@ class Subject(models.Model):
             if not subject.dateInit:
                 raise exceptions.ValidationError("La fecha de inicio no puede estar vacía.")
 
+
+
     def copy(self, default=None):
         if default is None:
             default = {}
 
         default.update({
-            'name': ''
+            'name': 'Copia de ' + self.name,
+            'image': False,
+            'date_inactive': False
         })
 
         result = super(Subject, self).copy(default)
         return result
+
+
